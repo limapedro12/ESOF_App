@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:teachmewell/sigarra/scraper.dart';
 import 'package:teachmewell/teacher.dart';
+import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 
 class UC extends StatefulWidget {
   final DocumentSnapshot uc;
@@ -73,9 +74,12 @@ class _UCState extends State<UC> {
                   shape: BoxShape.circle,
                 ),
                 padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  '0',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                child: SimpleCircularProgressBar(
+                  progressColors: [Colors.blue, Colors.red, Colors.green],
+                  mergeMode:true,
+                  onGetText: (double value){
+                    return Text ('2');
+                  },
                 )
             )
           ],
